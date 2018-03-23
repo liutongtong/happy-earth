@@ -14,7 +14,7 @@ class DeclarationsController < ApplicationController
     response = RestClient.get("https://freegeoip.net/json/#{ip_address}")
     response_object = JSON.load(response)
 
-    Declaration.create!(
+    @dec = Declaration.create!(
       ip_address: response_object.fetch('ip'),
       city: response_object.fetch('city'),
       country_name: response_object.fetch('country_name'),
@@ -24,6 +24,7 @@ class DeclarationsController < ApplicationController
       time_zone: response_object.fetch('time_zone')
     )
 
-    redirect_to declarations_path
+    #redirect_to declarations_path
+    render json: {clicks: Declaration.count}
   end
 end

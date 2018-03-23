@@ -8,12 +8,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script src="//www.webglearth.com/v2/api.js"></script>
+    <%= javascript_include_tag 'capture' %>
+    <script src="https://www.webglearth.com/v2/api.js"></script>
+    <!--<script src="javascripts/capture.js"></script>-->
     <title>Happy Earth</title>
   </head>
 
   <body>
-    <%= yield %>
+  <!--<div id="video"></div>
+    <div id="canvas"></div>
+  <div id="photo"></div>
+    <button id="startbutton">Start</button>-->
+
+
+
+  <%= yield %>
+  <div class="contentarea">
+
+
+    <canvas id="canvas">
+    </canvas>
+    <div class="output">
+      <img id="photo" alt="The screen capture will appear in this box.">
+    </div>
+
+  </div>
+
   </body>
 </html>

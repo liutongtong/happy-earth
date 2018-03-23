@@ -12,10 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170622080039) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  enable_extension "hstore"
-
   create_table "declarations", force: :cascade do |t|
     t.string "ip_address"
     t.string "city"
